@@ -62,6 +62,7 @@
 - 375px, 768px, 1280px 화면에서 가로 넘침 없이 주요 흐름 확인
 - 여섯 프로젝트 상세의 기본 정보·이미지·다음 프로젝트 연결 확인
 - Cloudflare Pages 프로덕션 배포와 공개 URL 응답 확인: [inho-portfolio.pages.dev](https://inho-portfolio.pages.dev/)
+- GitHub `main` 브랜치 자동 빌드·배포 활성화
 
 빌드 성공은 실제 사용자 수, 매출, 출시 상태 또는 외부 서비스 연동을 증명하지 않습니다. 각 프로젝트의 더 구체적인 검증 경계는 포트폴리오 상세 화면에 표시합니다.
 
@@ -81,20 +82,16 @@ npm run test:sites
 
 ## Cloudflare Pages 배포 설정
 
-현재 공개본은 Cloudflare Pages Direct Upload로 배포합니다.
+현재 공개본은 GitHub 저장소와 연결된 Cloudflare Pages가 `main` 브랜치의 새 커밋을 자동으로 빌드·배포합니다.
 
 | Setting | Value |
 |---|---|
+| Git repository | `inhodev/inho-portfolio` |
 | Production branch | `main` |
 | Build command | `npm run build` |
 | Build output directory | `dist/client` |
 
-```bash
-npm run build
-npx wrangler pages deploy dist/client --project-name inho-portfolio --branch main
-```
-
-Cloudflare의 GitHub 앱 연결 오류로 저장소 자동 배포는 아직 연결하지 않았습니다. 공개본과 GitHub 원본은 모두 확인 가능하며, 자동 배포를 연결하기 전까지는 위 명령으로 새 버전을 게시합니다.
+새 버전은 검증된 변경을 `origin/main`에 push하면 배포되며, Cloudflare 대시보드에서 해당 커밋의 빌드 로그와 프로덕션 상태를 확인할 수 있습니다.
 
 ## Repository map
 
