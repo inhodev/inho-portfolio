@@ -6,6 +6,7 @@
     확인 가능한 제품으로 마무리한 여섯 가지 작업을 소개합니다.
   </p>
   <p><code>Mobile</code> · <code>Web</code> · <code>AI</code> · <code>Product Delivery</code></p>
+  <p><a href="https://inho-portfolio.pages.dev/"><strong>Live Portfolio ↗</strong></a></p>
 </div>
 
 <p align="center">
@@ -60,7 +61,7 @@
 - `npm run test:sites` 정적 자산·SPA fallback 패키징 테스트 4개 통과
 - 375px, 768px, 1280px 화면에서 가로 넘침 없이 주요 흐름 확인
 - 여섯 프로젝트 상세의 기본 정보·이미지·다음 프로젝트 연결 확인
-- Cloudflare Pages는 **배포 예정 대상**이며 아직 공개 URL로 배포하지 않음
+- Cloudflare Pages 프로덕션 배포와 공개 URL 응답 확인: [inho-portfolio.pages.dev](https://inho-portfolio.pages.dev/)
 
 빌드 성공은 실제 사용자 수, 매출, 출시 상태 또는 외부 서비스 연동을 증명하지 않습니다. 각 프로젝트의 더 구체적인 검증 경계는 포트폴리오 상세 화면에 표시합니다.
 
@@ -80,7 +81,7 @@ npm run test:sites
 
 ## Cloudflare Pages 배포 설정
 
-GitHub 저장소 연결 후 다음 값으로 배포할 수 있습니다.
+현재 공개본은 Cloudflare Pages Direct Upload로 배포합니다.
 
 | Setting | Value |
 |---|---|
@@ -88,7 +89,12 @@ GitHub 저장소 연결 후 다음 값으로 배포할 수 있습니다.
 | Build command | `npm run build` |
 | Build output directory | `dist/client` |
 
-공개 URL은 실제 배포와 라이브 검증이 끝난 뒤 이 문서에 추가합니다.
+```bash
+npm run build
+npx wrangler pages deploy dist/client --project-name inho-portfolio --branch main
+```
+
+Cloudflare의 GitHub 앱 연결 오류로 저장소 자동 배포는 아직 연결하지 않았습니다. 공개본과 GitHub 원본은 모두 확인 가능하며, 자동 배포를 연결하기 전까지는 위 명령으로 새 버전을 게시합니다.
 
 ## Repository map
 
