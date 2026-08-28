@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+  ArrowDown,
   ArrowLeft,
   ArrowUpRight,
   Check,
   ChevronDown,
-  ExternalLink,
   Grid3X3,
   Menu,
   Search,
@@ -208,19 +208,19 @@ function Header({ onBrowse }) {
     <header className={`floating-header ${open ? "is-open" : ""}`}>
       <a className="brand-link" href="#top" onClick={() => setOpen(false)} aria-label="INHODEV 홈"><BrandMark /></a>
       <nav className="desktop-nav" aria-label="주요 탐색">
-        <button type="button" onClick={onBrowse}>Work</button>
+        <button type="button" onClick={onBrowse}>Portfolio</button>
         <a href="#about">About</a>
-        <a className="header-cta" href="https://github.com/inhodev" target="_blank" rel="noreferrer">Contact</a>
+        <a className="header-cta" href="#contact">Contact</a>
       </nav>
       <button className="mobile-menu-button" type="button" aria-label={open ? "메뉴 닫기" : "메뉴 열기"} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
         {open ? <X size={21} strokeWidth={2.25} /> : <Menu size={22} strokeWidth={2.25} />}
       </button>
       {open ? (
         <nav className="mobile-nav" aria-label="모바일 탐색">
-          <button type="button" onClick={() => { onBrowse(); setOpen(false); }}>Work</button>
+          <button type="button" onClick={() => { onBrowse(); setOpen(false); }}>Portfolio</button>
           <a href="#about" onClick={() => setOpen(false)}>About</a>
           <a href="https://github.com/inhodev" target="_blank" rel="noreferrer">GitHub</a>
-          <a className="mobile-nav-cta" href="https://github.com/inhodev" target="_blank" rel="noreferrer">개발 문의하기</a>
+          <a className="mobile-nav-cta" href="#contact" onClick={() => setOpen(false)}>Contact</a>
         </nav>
       ) : null}
     </header>
@@ -296,7 +296,7 @@ function Catalog({ onOpen }) {
           <BrandMark />
           <div className="catalog-tabs" aria-label="작품 유형"><span className="is-active">Products</span><span>Experiments</span></div>
           <label className="search-field"><Search size={18} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects..." aria-label="프로젝트 검색" /></label>
-          <a className="catalog-contact" href="https://github.com/inhodev" target="_blank" rel="noreferrer">Contact <ExternalLink size={16} /></a>
+          <a className="catalog-contact" href="#contact">Contact <ArrowDown size={16} /></a>
         </div>
         <div className="catalog-taxonomy" aria-label="제작 가능 범위">
           {catalogTaxonomy.map((group) => (
@@ -367,8 +367,12 @@ function ContactSection() {
   return (
     <section className="contact-section" id="contact">
       <h2>만들고 싶은 제품이 있나요?</h2>
-      <p>범위가 작아도 괜찮습니다. 가장 중요한 사용자 흐름부터 함께 만들 수 있습니다.</p>
-      <a href="https://github.com/inhodev" target="_blank" rel="noreferrer">개발 문의하기 <ArrowUpRight size={20} /></a>
+      <p>아이디어를 빠르게 실제 서비스로 만드는 데 자신 있습니다. 만들고 싶은 게 있다면 편하게 연락 주세요. 궁금한 건 무엇이든 물어보셔도 좋습니다.</p>
+      <address className="contact-details" aria-label="연락처">
+        <a href="tel:+821059090313">010-5909-0313</a>
+        <a href="mailto:rladlsgh7777@gmail.com">rladlsgh7777@gmail.com</a>
+      </address>
+      <a className="contact-github" href="https://github.com/inhodev" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={20} /></a>
     </section>
   );
 }
