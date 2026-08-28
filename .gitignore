@@ -1,0 +1,24 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+.vite/
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+*.local
+*.log
+.DS_Store
+
+# Local QA, browser profiles, and generated evidence
+evidence/
+.omo/
+playwright-report/
+test-results/
+
+# Local agent instructions and internal QA notes
+AGENTS.md
+DESIGN.md
+design-qa.md
