@@ -11,6 +11,7 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react";
+import { ChallengeLogPage } from "./ChallengeLog.jsx";
 
 const projects = [
   {
@@ -464,7 +465,7 @@ function ProjectDetail({ project, nextProject, onClose, onNext }) {
   );
 }
 
-export function App() {
+function PortfolioApp() {
   const [selectedProject, setSelectedProject] = useState(null);
   const browse = () => document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
   const closeProject = useCallback(() => setSelectedProject(null), []);
@@ -479,4 +480,9 @@ export function App() {
       {selectedProject ? <ProjectDetail project={selectedProject} nextProject={nextProject} onClose={closeProject} onNext={() => setSelectedProject(nextProject)} /> : null}
     </>
   );
+}
+
+export function App() {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  return path === "/challenge-log" ? <ChallengeLogPage /> : <PortfolioApp />;
 }
