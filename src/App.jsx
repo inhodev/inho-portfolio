@@ -17,16 +17,17 @@ const projects = [
   {
     id: "runquest",
     name: "RunQuest",
-    eyebrow: "Adaptive audio running",
-    description: "달릴수록 이야기가 열리는 적응형 오디오 스토리 러닝 앱.",
-    longDescription: "GPS, 거리, 페이스 변화에 맞춰 오디오 챕터가 열리고 러닝이 끝나면 기록과 다음 모험을 연결합니다.",
+    eyebrow: "이야기를 들으며 달리는 러닝 앱",
+    description: "달린 거리와 속도에 맞춰 이야기가 이어지는 오디오 러닝 앱입니다.",
+    longDescription: "달리면 거리와 속도에 맞춰 이야기가 이어집니다. 운동을 마치면 기록과 다음 이야기를 보여줍니다.",
     platform: "Mobile",
-    stack: "Flutter · Riverpod · GPS · Audio",
-    status: "MVP",
+    platformLabel: "모바일 앱",
+    stack: "Flutter · Riverpod · GPS · 오디오",
+    status: "시제품",
     year: "2026",
-    period: "2026 · MVP 제작",
-    team: "1인 개발 중심",
-    role: "제품 기획부터 러닝 엔진, 앱 화면, 기록 흐름까지",
+    period: "2026 · 시제품 제작",
+    team: "1명",
+    role: "기획, 앱 개발, 러닝 기록, 오디오 재생",
     accent: "#ff5a1f",
     icon: "/projects/runquest/icon.png",
     screenshots: [
@@ -35,23 +36,24 @@ const projects = [
       "/projects/runquest/03-report.png",
       "/projects/runquest/04-achievements.png",
     ],
-    highlights: ["달리기 기록과 이야기 진행을 한 흐름으로 연결", "속도·거리 변화에 맞춰 이어지는 오디오 경험", "운동 종료 후 기록과 다음 챕터를 보는 리포트"],
-    story: "달리는 중에는 화면을 오래 보기 어렵다는 데서 시작했습니다. 속도와 거리 변화에 맞춰 이야기가 자연스럽게 이어지고, 운동이 끝나면 기록과 다음 챕터까지 한 번에 확인하도록 러닝 흐름 전체를 만들었습니다. 핵심 동작은 실제 화면 캡처와 엔진 테스트로 다시 확인했습니다.",
-    verification: "헤드리스 화면 캡처와 엔진 테스트 근거 보유. 클라우드 연동은 다음 단계입니다.",
+    highlights: ["달린 거리와 이야기 진행 상황을 함께 기록", "거리와 속도에 맞춰 다음 오디오 재생", "운동이 끝나면 기록과 다음 이야기를 한 화면에 표시"],
+    story: "달릴 때는 화면을 오래 보기 어렵습니다. 그래서 거리와 속도에 맞춰 이야기가 이어지도록 오디오 중심으로 만들었습니다. 달리기를 마친 뒤에는 운동 기록과 다음 이야기를 바로 볼 수 있습니다. 주요 화면과 기록 계산 기능은 자동 테스트로 다시 확인했습니다.",
+    verification: "앱 화면은 자동으로 캡처했고, 거리와 이야기 진행을 계산하는 기능은 테스트했습니다. 온라인 저장 기능은 아직 연결하지 않았습니다.",
   },
   {
     id: "olive",
     name: "OLIVE",
-    eyebrow: "Worship discovery platform",
-    description: "기분과 상황에 맞는 찬양을 발견하고 기록하는 큐레이션 플랫폼.",
-    longDescription: "맞춤 큐레이션, 차트와 곡 탐색, 커뮤니티, 보관함과 인사이트를 하나의 모바일 경험으로 구성했습니다.",
+    eyebrow: "내 상황에 맞는 찬양을 찾는 앱",
+    description: "기분이나 상황을 입력하면 어울리는 찬양을 추천하고 모아두는 앱입니다.",
+    longDescription: "기분과 상황으로 찬양을 찾고, 추천 곡을 듣고 저장한 뒤 내 기록으로 남길 수 있습니다.",
     platform: "Mobile",
+    platformLabel: "모바일 앱",
     stack: "Flutter · Supabase · Riverpod · OpenAI",
-    status: "Beta",
+    status: "시험 버전",
     year: "2026",
-    period: "2026 · 베타 제작",
-    team: "1인 개발 중심",
-    role: "제품 기획, 모바일 앱, 추천 흐름, 운영 화면",
+    period: "2026 · 시험 버전 제작",
+    team: "1명",
+    role: "기획, 앱 개발, 추천 기능, 콘텐츠 관리 화면",
     accent: "#4f7543",
     icon: "/projects/olive/icon.png",
     screenshots: [
@@ -61,23 +63,24 @@ const projects = [
       "/projects/olive/04-ai-answer.png",
       "/projects/olive/05-profile.png",
     ],
-    highlights: ["기분과 상황만으로 찬양을 찾는 맞춤 추천", "탐색·재생·보관·기록이 이어지는 모바일 흐름", "사용자 앱과 운영 화면을 함께 고려한 서비스 구조"],
-    story: "노래 제목을 몰라도 지금의 기분과 상황으로 찬양을 찾을 수 있게 만들었습니다. 추천에서 끝내지 않고 탐색, 재생, 보관, 기록과 커뮤니티가 자연스럽게 이어지도록 사용자 앱과 운영 흐름을 함께 설계했고, 실제 앱 화면과 테스트 기록으로 주요 경험을 확인했습니다.",
-    verification: "실제 앱 화면과 Flutter 테스트 근거를 사용했습니다. 일부 캡처는 이전 앱 빌드입니다.",
+    highlights: ["기분과 상황을 입력해 찬양 추천받기", "추천 곡을 듣고 내 보관함에 저장", "사용자 앱과 콘텐츠 관리 화면을 함께 제작"],
+    story: "노래 제목을 몰라도 지금 필요한 찬양을 찾을 수 있게 만들었습니다. 기분이나 상황을 적으면 곡을 추천받고, 들은 곡은 저장하거나 기록으로 남길 수 있습니다. 다른 사용자와 이야기를 나누는 공간과 콘텐츠를 관리하는 화면도 함께 만들었습니다.",
+    verification: "현재 보이는 앱 화면과 Flutter 자동 테스트를 확인했습니다. 일부 화면은 이전 버전에서 촬영했습니다.",
   },
   {
     id: "inha-ai",
     name: "INHA AI",
-    eyebrow: "Source-grounded campus RAG",
-    description: "공식 출처가 있을 때만 답하는 인하대학교 캠퍼스 생활 AI.",
-    longDescription: "학사, 장학, 시설, 도서관 같은 질문을 검색하고 출처·최신성·확인 필요 여부를 답변에 함께 표시합니다.",
+    eyebrow: "학교 공식 자료로 답하는 캠퍼스 AI",
+    description: "학사·장학·시설 질문에 학교 공식 출처를 붙여 답하는 웹 서비스입니다.",
+    longDescription: "학생이 질문하면 학교 공식 자료에서 답을 찾습니다. 참고한 출처와 자료의 최신 여부도 함께 보여줍니다.",
     platform: "Web",
+    platformLabel: "웹 서비스",
     stack: "React · Bun · PostgreSQL · pgvector",
-    status: "Local MVP",
+    status: "테스트용 시제품",
     year: "2026",
-    period: "2026 · 로컬 MVP",
-    team: "1인 개발 중심",
-    role: "질문 경험, 근거 검색, 답변 안전장치, 운영 구조",
+    period: "2026 · 시제품 제작",
+    team: "1명",
+    role: "기획, 웹 개발, 자료 검색, 답변 확인 기능",
     accent: "#4a59ff",
     icon: "/projects/inha-ai/icon.png",
     screenshots: [
@@ -86,23 +89,24 @@ const projects = [
       "/projects/inha-ai/02-home-mobile.png",
       "/projects/inha-ai/04-answer-mobile.png",
     ],
-    highlights: ["학교 공식 출처를 먼저 찾는 질문 검색", "답변마다 출처·최신성·확인 필요 여부 표시", "학생 채팅부터 운영 관리까지 이어지는 구조"],
-    story: "캠퍼스 질문에서 가장 위험한 건 그럴듯하지만 틀린 답이라고 봤습니다. 그래서 학교 공식 출처가 있을 때만 답하고, 출처와 최신성, 추가 확인이 필요한 부분까지 한 화면에 보여주도록 만들었습니다. 로컬 환경에서 질문부터 근거가 있는 답변까지 다시 실행해 확인했습니다.",
-    verification: "이번 포트폴리오 작업에서 로컬 mock mode를 실행해 질문→근거 답변을 새로 캡처했습니다.",
+    highlights: ["학교 공지와 안내 자료에서 먼저 답 찾기", "답변 아래에 자료 출처와 최신 여부 표시", "학생용 질문 화면과 자료 관리 화면을 함께 제작"],
+    story: "학교 생활 정보는 틀린 답 하나가 큰 불편으로 이어질 수 있습니다. 그래서 학교 공식 자료를 찾았을 때만 답하고, 어떤 자료를 참고했는지 답변 아래에 표시했습니다. 현재는 내 컴퓨터에서 질문을 입력해 출처가 붙은 답변이 나오는 과정까지 다시 확인했습니다.",
+    verification: "내 컴퓨터에서 준비된 예시 자료를 사용해 질문부터 출처가 붙은 답변까지 다시 실행했습니다. 실제 학교 서버와 연결한 상태는 아닙니다.",
   },
   {
     id: "cosmoday",
     name: "COSMODAY",
-    eyebrow: "A universe story every day",
-    description: "매일 하나의 우주 사건을 카드와 위젯으로 만나는 iOS 우주 캘린더.",
-    longDescription: "날짜별 우주 사건, 천문 이벤트, 공유 카드, 위젯과 알림을 연간 콘텐츠 제작 파이프라인과 연결합니다.",
+    eyebrow: "매일 한 편씩 만나는 우주 이야기",
+    description: "날짜마다 하나의 우주 이야기를 카드와 위젯으로 보여주는 아이폰 앱입니다.",
+    longDescription: "날짜마다 하나의 우주 사건을 소개합니다. 중요한 천문 현상은 알림과 위젯, 공유 이미지로 다시 알려줍니다.",
     platform: "iOS",
+    platformLabel: "아이폰 앱",
     stack: "SwiftUI · SwiftData · WidgetKit",
-    status: "Beta",
+    status: "시험 버전",
     year: "2026",
-    period: "2026 · 베타 제작",
-    team: "1인 개발 중심",
-    role: "콘텐츠 기획, iOS 앱, 위젯, 연간 제작 흐름",
+    period: "2026 · 시험 버전 제작",
+    team: "1명",
+    role: "콘텐츠 기획, 아이폰 앱, 위젯, 1년치 콘텐츠 제작",
     accent: "#162fff",
     icon: "/projects/cosmoday/icon.png",
     screenshots: [
@@ -111,23 +115,24 @@ const projects = [
       "/projects/cosmoday/03-cinematic.jpg",
       "/projects/cosmoday/04-june.jpg",
     ],
-    highlights: ["날짜마다 하나의 우주 이야기를 보여주는 콘텐츠", "앱·위젯·알림·공유 카드가 이어지는 경험", "1년치 콘텐츠를 만들고 검수하는 제작 흐름"],
-    story: "어렵고 흩어져 있는 우주 이야기를 매일 하나씩 가볍게 만나는 경험으로 바꿨습니다. 날짜별 카드가 앱, 위젯, 알림과 공유 이미지로 이어지게 하고, 1년치 콘텐츠를 꾸준히 만들고 검수할 수 있는 제작 흐름까지 함께 구성했습니다.",
-    verification: "현재는 검증된 콘텐츠 보드와 시네마틱을 사용했습니다. 이번 카드 스냅샷 테스트는 서명 문제로 중단됐습니다.",
+    highlights: ["날짜마다 하나씩 보여주는 짧은 우주 이야기", "앱·위젯·알림·공유 이미지에 같은 내용 제공", "1년치 우주 이야기를 만들고 확인하는 과정"],
+    story: "어렵게 느껴지는 우주 이야기를 하루에 하나씩 가볍게 볼 수 있게 만들었습니다. 오늘의 카드 내용을 앱과 위젯, 알림, 공유 이미지에서도 볼 수 있게 했습니다. 1년치 이야기를 꾸준히 만들고 틀린 내용을 고칠 수 있도록 제작 과정도 정리했습니다.",
+    verification: "현재 화면에는 검토를 마친 콘텐츠 카드와 영상용 이미지를 사용했습니다. 이번 자동 화면 테스트는 앱 실행에 필요한 서명 문제로 끝까지 진행하지 못했습니다.",
   },
   {
     id: "toy",
     name: "TOY",
-    eyebrow: "Pocket voxel social world",
-    description: "폰을 나가지 않고 작은 창작물을 만드는 복셀 소셜 월드.",
-    longDescription: "아이소메트릭 월드에서 탐색하고, 프롬프트와 속성을 조합해 작은 토이를 만들고, 채팅과 체험으로 이어집니다.",
+    eyebrow: "작은 세상을 만들고 구경하는 창작 앱",
+    description: "휴대폰 안에서 작은 3D 장난감을 만들고 서로의 작품을 구경하는 아이폰 앱입니다.",
+    longDescription: "작은 3D 세상을 돌아다니며 작품을 구경합니다. 글과 속성을 골라 장난감을 만들고 친구들과 이야기할 수 있습니다.",
     platform: "iOS",
-    stack: "SwiftUI · Canvas · Local fixtures",
-    status: "Headless QA",
+    platformLabel: "아이폰 앱",
+    stack: "SwiftUI · Canvas · 기기 안에 저장한 데이터",
+    status: "화면 점검 완료",
     year: "2026",
-    period: "2026 · 화면·QA 제작",
-    team: "1인 개발 중심",
-    role: "세계관, iOS 화면, 생성 로직, 다국어 QA",
+    period: "2026 · 화면 제작과 자동 점검",
+    team: "1명",
+    role: "기획, 아이폰 화면, 장난감 생성 기능, 한국어·영어 점검",
     accent: "#ff2f5f",
     icon: "/projects/toy/icon.png",
     screenshots: [
@@ -137,23 +142,24 @@ const projects = [
       "/projects/toy/04-chat.png",
       "/projects/toy/05-detail.png",
     ],
-    highlights: ["탐색하고 만드는 아이소메트릭 복셀 월드", "서버 없이 기기 안에서 같은 결과를 만드는 생성 방식", "한국어·영어 화면 20장을 자동으로 확인한 QA"],
-    story: "작은 창작물을 만들고 바로 구경하는 흐름을 서버 없이도 안정적으로 보여주는 것이 핵심이었습니다. 아이소메트릭 월드에서 탐색, 생성, 채팅과 상세 체험이 이어지게 만들고, 같은 입력이면 같은 결과가 나오도록 구성했습니다. 한국어와 영어 화면 20장을 같은 조건에서 자동 확인했습니다.",
-    verification: "배포 뷰와 같은 SwiftUI 트리를 macOS ImageRenderer로 캡처한 실제 헤드리스 화면입니다.",
+    highlights: ["3D 공간을 둘러보고 다른 작품 구경하기", "글과 속성을 골라 나만의 장난감 만들기", "한국어·영어 화면 20장을 같은 조건으로 자동 확인"],
+    story: "작은 장난감을 만들고 바로 구경하는 재미를 휴대폰 안에 담았습니다. 3D 공간을 돌아다니며 작품을 찾고, 글과 속성을 골라 새 장난감을 만든 뒤 채팅과 상세 화면으로 이어집니다. 인터넷 연결이 없어도 같은 입력에는 같은 결과가 나오도록 만들었고, 한국어와 영어 화면 20장을 자동으로 확인했습니다.",
+    verification: "앱에서 쓰는 화면 코드를 맥에서 실행해 자동으로 캡처했습니다.",
   },
   {
     id: "rewind",
     name: "Rewind",
-    eyebrow: "A calmer reflection partner",
-    description: "사이드 프로젝트를 끝까지 완주하게 돕는 개인 회고 파트너.",
-    longDescription: "데일리 체크인, 주간 회고, 선택형 AI 인사이트와 iCloud 동기화를 조용한 iOS 경험으로 묶었습니다.",
+    eyebrow: "매일 기록하고 돌아보는 회고 앱",
+    description: "매일 짧게 기록하고 한 주의 진행 상황을 돌아보게 돕는 아이폰 앱입니다.",
+    longDescription: "오늘 한 일을 짧게 남기고 한 주의 기록을 모아 돌아봅니다. 원할 때만 AI가 살펴볼 내용을 제안합니다.",
     platform: "iOS",
+    platformLabel: "아이폰 앱",
     stack: "SwiftUI · SwiftData · StoreKit · CloudKit",
-    status: "Release prep",
+    status: "출시 준비",
     year: "2026",
     period: "2026 · 출시 준비",
-    team: "1인 개발 중심",
-    role: "제품 기획, iOS 앱, 회고 흐름, 출시 준비",
+    team: "1명",
+    role: "기획, 아이폰 앱, 기록과 회고 기능, 출시 준비",
     accent: "#ff666c",
     icon: "/projects/rewind/icon.png",
     screenshots: [
@@ -162,41 +168,46 @@ const projects = [
       "/projects/rewind/03-language-en.png",
       "/projects/rewind/04-language-ja.png",
     ],
-    highlights: ["매일 짧게 남기고 주간 회고로 이어지는 흐름", "원할 때만 확인하는 AI 인사이트", "한국어·영어·일본어를 고려한 설정과 화면"],
-    story: "기능이 많은 생산성 앱보다 부담 없이 계속 쓰는 회고 도구가 필요했습니다. 매일 짧게 남긴 기록이 주간 회고로 이어지고, 원할 때만 AI 인사이트를 보는 차분한 흐름으로 만들었습니다. 한국어, 영어, 일본어 화면까지 준비했으며 결제와 iCloud는 출시 전 별도 확인 범위로 남겨뒀습니다.",
-    verification: "현재 보유한 앱·다국어 화면을 사용했습니다. 결제와 iCloud 동작은 별도 출시 QA 경계입니다.",
+    highlights: ["매일 부담 없이 남기는 짧은 기록", "한 주의 기록을 모아 보는 주간 회고", "한국어·영어·일본어 화면과 설정 준비"],
+    story: "기능이 많은 생산성 앱보다 오래 쓸 수 있는 간단한 회고 도구를 만들고 싶었습니다. 매일 짧게 남긴 기록을 주간 회고에서 모아 보고, 원할 때만 AI가 돌아볼 내용을 제안합니다. 한국어, 영어, 일본어 화면까지 만들었고, 결제와 iCloud 동기화는 출시 전에 더 확인할 예정입니다.",
+    verification: "현재 앱 화면과 세 언어 화면을 확인했습니다. 결제와 iCloud 동기화는 아직 출시 전 점검이 필요합니다.",
   },
 ];
 
-const filters = ["All", "Mobile", "Web", "iOS"];
+const filters = [
+  { value: "All", label: "전체" },
+  { value: "Mobile", label: "모바일" },
+  { value: "Web", label: "웹" },
+  { value: "iOS", label: "아이폰" },
+];
 
 const catalogTaxonomy = [
   {
-    label: "Platforms",
-    labelKo: "제작 환경",
+    label: "사용 환경",
+    labelKo: "어디서 쓰나요",
     items: [["iOS", "아이폰 앱"], ["Android", "안드로이드 앱"], ["Web", "웹 서비스"], ["macOS", "맥 앱"]],
   },
   {
-    label: "Products",
-    labelKo: "만들 수 있는 것",
-    items: [["Consumer", "일반 사용자용"], ["Campus", "학교·교육"], ["Creator", "창작 도구"], ["Content", "콘텐츠 서비스"]],
+    label: "제품 종류",
+    labelKo: "무엇을 만드나요",
+    items: [["생활 서비스", "일상에서 쓰는 앱"], ["학교·교육", "캠퍼스와 학습"], ["창작 도구", "콘텐츠 만들기"], ["콘텐츠 서비스", "읽고 보고 듣기"]],
   },
   {
-    label: "Capabilities",
-    labelKo: "다루는 범위",
-    items: [["Mobile app", "모바일 앱 제작"], ["AI & RAG", "AI·문서 검색"], ["3D & Canvas", "3D·인터랙션"], ["Full stack", "화면부터 서버까지"]],
+    label: "개발 범위",
+    labelKo: "어디까지 맡나요",
+    items: [["모바일 앱", "화면과 기능"], ["AI 기능", "자료 검색과 답변"], ["3D 화면", "움직이는 입체 화면"], ["전체 개발", "화면부터 서버까지"]],
   },
   {
-    label: "Status",
-    labelKo: "진행 상태",
-    items: [["MVP", "핵심 기능 완성"], ["Beta", "사용 테스트 단계"], ["Local QA", "로컬 검증 완료"], ["Release prep", "출시 준비"]],
+    label: "진행 단계",
+    labelKo: "지금 어느 상태인가요",
+    items: [["시제품", "핵심 기능 제작"], ["시험 버전", "사용 전 점검"], ["테스트용", "내 컴퓨터에서 확인"], ["출시 준비", "배포 전 마무리"]],
   },
 ];
 
 const evidencePoints = [
-  { value: "6개", label: "제품 사례", description: "모바일·웹·AI 작업을 확인 가능한 화면과 함께 보여드립니다." },
-  { value: "20장", label: "TOY 다국어 QA", description: "한국어·영어 화면을 같은 조건에서 자동으로 확인했습니다." },
-  { value: "질문→근거", label: "INHA AI 재실행", description: "질문부터 출처가 있는 답변까지 로컬에서 다시 확인했습니다." },
+  { value: "6개", label: "직접 만든 제품", description: "앱·웹·AI 제품 6개를 실제 화면과 함께 볼 수 있습니다." },
+  { value: "20장", label: "TOY 화면 점검", description: "한국어·영어 화면 20장을 같은 조건으로 자동 확인했습니다." },
+  { value: "출처 확인", label: "INHA AI 답변 점검", description: "질문을 입력하고 공식 출처가 붙은 답변이 나오는 과정까지 다시 실행했습니다." },
 ];
 
 function BrandMark() {
@@ -209,19 +220,19 @@ function Header({ onBrowse }) {
     <header className={`floating-header ${open ? "is-open" : ""}`}>
       <a className="brand-link" href="#top" onClick={() => setOpen(false)} aria-label="INHODEV 홈"><BrandMark /></a>
       <nav className="desktop-nav" aria-label="주요 탐색">
-        <button type="button" onClick={onBrowse}>Portfolio</button>
-        <a href="#about">About</a>
-        <a className="header-cta" href="#contact">Contact</a>
+        <button type="button" onClick={onBrowse}>프로젝트</button>
+        <a href="#about">소개</a>
+        <a className="header-cta" href="#contact">문의하기</a>
       </nav>
       <button className="mobile-menu-button" type="button" aria-label={open ? "메뉴 닫기" : "메뉴 열기"} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
         {open ? <X size={21} strokeWidth={2.25} /> : <Menu size={22} strokeWidth={2.25} />}
       </button>
       {open ? (
         <nav className="mobile-nav" aria-label="모바일 탐색">
-          <button type="button" onClick={() => { onBrowse(); setOpen(false); }}>Portfolio</button>
-          <a href="#about" onClick={() => setOpen(false)}>About</a>
+          <button type="button" onClick={() => { onBrowse(); setOpen(false); }}>프로젝트</button>
+          <a href="#about" onClick={() => setOpen(false)}>소개</a>
           <a href="https://github.com/inhodev" target="_blank" rel="noreferrer">GitHub</a>
-          <a className="mobile-nav-cta" href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          <a className="mobile-nav-cta" href="#contact" onClick={() => setOpen(false)}>문의하기</a>
         </nav>
       ) : null}
     </header>
@@ -232,14 +243,14 @@ function Hero({ onBrowse }) {
   return (
     <section className="hero" id="top">
       <div className="hero-icon-stack" aria-hidden="true"><span /><span /><img src="/projects/runquest/icon.png" alt="" /></div>
-      <p className="hero-kicker">Mobile · Web · AI products</p>
-      <h1>제품을 끝까지<br />만드는 개발자.</h1>
-      <p className="hero-copy">아이디어를 실제 화면과 동작으로 만들고,<br className="desktop-break" /> 검증 가능한 제품으로 마무리합니다.</p>
+      <p className="hero-kicker">모바일 앱 · 웹 서비스 · AI 기능</p>
+      <h1><span>아이디어를 앱과 웹으로</span><br />만듭니다.</h1>
+      <p className="hero-copy">기획부터 개발, 테스트, 배포까지<br className="desktop-break" /> 한 사람이 이어서 맡습니다.</p>
       <div className="hero-actions">
         <button className="primary-button" type="button" onClick={onBrowse}>프로젝트 보기</button>
         <a className="secondary-button" href="https://github.com/inhodev" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={18} /></a>
       </div>
-      <p className="trusted-label">Built across product surfaces</p>
+      <p className="trusted-label">주로 사용하는 기술</p>
       <div className="technology-row" aria-label="사용 기술"><span>Flutter</span><span>SwiftUI</span><span>React</span><span>Supabase</span><span>WebGL</span></div>
     </section>
   );
@@ -266,11 +277,11 @@ function ProjectCard({ project, onOpen }) {
             <ArrowUpRight className="card-arrow" size={20} />
           </div>
           <p className="project-description">{project.description}</p>
-          <div className="project-tags"><span>{project.platform}</span><span>{project.status}</span><span>{project.year}</span></div>
+          <div className="project-tags"><span>{project.platformLabel}</span><span>{project.status}</span><span>{project.year}</span></div>
         </div>
       </button>
       <details className="project-core">
-        <summary>내가 만든 핵심 3가지 <ChevronDown size={17} aria-hidden="true" /></summary>
+        <summary>제가 만든 주요 기능 3가지 <ChevronDown size={17} aria-hidden="true" /></summary>
         <ul>{project.highlights.map((item) => <li key={item}>{item}</li>)}</ul>
       </details>
     </article>
@@ -285,7 +296,7 @@ function Catalog({ onOpen }) {
     const normalized = query.trim().toLowerCase();
     return projects.filter((project) => {
       const matchesFilter = filter === "All" || project.platform === filter;
-      const haystack = `${project.name} ${project.description} ${project.stack} ${project.platform}`.toLowerCase();
+      const haystack = `${project.name} ${project.description} ${project.stack} ${project.platform} ${project.platformLabel}`.toLowerCase();
       return matchesFilter && (!normalized || haystack.includes(normalized));
     });
   }, [filter, query]);
@@ -295,9 +306,9 @@ function Catalog({ onOpen }) {
       <div className="catalog-window">
         <div className="catalog-toolbar">
           <BrandMark />
-          <div className="catalog-tabs" aria-label="작품 유형"><span className="is-active">Products</span><span>Experiments</span></div>
-          <label className="search-field"><Search size={18} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects..." aria-label="프로젝트 검색" /></label>
-          <a className="catalog-contact" href="#contact">Contact <ArrowDown size={16} /></a>
+          <div className="catalog-tabs" aria-label="작품 유형"><span className="is-active">제품</span><span>실험작</span></div>
+          <label className="search-field"><Search size={18} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="프로젝트 검색" aria-label="프로젝트 검색" /></label>
+          <a className="catalog-contact" href="#contact">문의하기 <ArrowDown size={16} /></a>
         </div>
         <div className="catalog-taxonomy" aria-label="제작 가능 범위">
           {catalogTaxonomy.map((group) => (
@@ -313,16 +324,16 @@ function Catalog({ onOpen }) {
         </div>
         <div className="catalog-controls">
           <div className="filter-pills" role="group" aria-label="플랫폼 필터">
-            {filters.map((item) => <button key={item} type="button" className={filter === item ? "is-active" : ""} onClick={() => setFilter(item)}>{item}</button>)}
+            {filters.map((item) => <button key={item.value} type="button" className={filter === item.value ? "is-active" : ""} onClick={() => setFilter(item.value)}>{item.label}</button>)}
           </div>
-          <p>{visibleProjects.length} products</p>
-          <button className="filter-button" type="button" onClick={() => setFilterOpen((value) => !value)} aria-expanded={filterOpen}><SlidersHorizontal size={17} /> Filter</button>
+          <p>{visibleProjects.length}개 프로젝트</p>
+          <button className="filter-button" type="button" onClick={() => setFilterOpen((value) => !value)} aria-expanded={filterOpen}><SlidersHorizontal size={17} /> 선정 기준</button>
         </div>
-        {filterOpen ? <div className="filter-panel"><Check size={16} /> 실제 캡처가 확보된 작품만 표시하고 있습니다.</div> : null}
+        {filterOpen ? <div className="filter-panel"><Check size={16} /> 실제 화면을 확인한 프로젝트만 소개합니다.</div> : null}
         {visibleProjects.length ? (
           <div className="project-grid">{visibleProjects.map((project) => <ProjectCard key={project.id} project={project} onOpen={onOpen} />)}</div>
         ) : (
-          <div className="empty-state"><Grid3X3 size={24} /><h3>일치하는 프로젝트가 없습니다.</h3><button type="button" onClick={() => { setQuery(""); setFilter("All"); }}>전체 보기</button></div>
+          <div className="empty-state"><Grid3X3 size={24} /><h3>검색 결과가 없습니다.</h3><button type="button" onClick={() => { setQuery(""); setFilter("All"); }}>전체 프로젝트 보기</button></div>
         )}
       </div>
     </section>
@@ -332,12 +343,12 @@ function Catalog({ onOpen }) {
 function About() {
   return (
     <section className="about-section" id="about">
-      <p className="section-kicker">From idea to working product</p>
-      <h2>화면만 만드는 것이 아니라,<br />제품의 핵심 흐름을 연결합니다.</h2>
+      <p className="section-kicker">처음부터 끝까지</p>
+      <h2>기획, 개발, 테스트,<br />배포까지 맡습니다.</h2>
       <div className="about-grid">
-        <article><span>01</span><h3>Product build</h3><p>사용자 흐름, 데이터 구조, 화면과 동작을 하나의 제품으로 구현합니다.</p></article>
-        <article><span>02</span><h3>Evidence</h3><p>빌드 성공과 실제 화면 검증을 분리하고 확인된 범위를 명확하게 남깁니다.</p></article>
-        <article><span>03</span><h3>Delivery</h3><p>모바일, 웹, 관리자, 콘텐츠 파이프라인까지 필요한 표면을 이어서 전달합니다.</p></article>
+        <article><span>01</span><h3>기획과 개발</h3><p>누가 언제 쓰는 서비스인지 먼저 정리하고, 필요한 화면과 기능을 함께 만듭니다.</p></article>
+        <article><span>02</span><h3>테스트</h3><p>빌드만 되는지 보지 않고, 실제 화면과 꼭 필요한 기능이 제대로 작동하는지 확인합니다.</p></article>
+        <article><span>03</span><h3>배포와 전달</h3><p>앱과 웹을 배포하고, 이후에도 수정하기 쉬운 형태로 정리해 전달합니다.</p></article>
       </div>
     </section>
   );
@@ -347,9 +358,9 @@ function EvidenceSection() {
   return (
     <section className="evidence-section" id="proof">
       <div className="evidence-heading">
-        <p className="section-kicker">Proof · 확인 가능한 근거</p>
-        <h2>말보다, 확인할 수 있는 결과를 남깁니다.</h2>
-        <p>꾸며낸 수치 대신, 지금 확인할 수 있는 화면과 다시 실행한 작업 근거만 모았습니다.</p>
+        <p className="section-kicker">직접 확인한 내용</p>
+        <h2>말만 하지 않고, 작동하는 화면으로 보여드립니다.</h2>
+        <p>아래에는 지금 이 포트폴리오에서 확인할 수 있는 내용만 적었습니다.</p>
       </div>
       <div className="evidence-grid">
         {evidencePoints.map((point) => (
@@ -367,8 +378,8 @@ function EvidenceSection() {
 function ContactSection() {
   return (
     <section className="contact-section" id="contact">
-      <h2>만들고 싶은 제품이 있나요?</h2>
-      <p>아이디어를 빠르게 실제 서비스로 만드는 데 자신 있습니다. 만들고 싶은 게 있다면 편하게 연락 주세요. 궁금한 건 무엇이든 물어보셔도 좋습니다.</p>
+      <h2>만들고 싶은 앱이나 웹이 있나요?</h2>
+      <p>아직 아이디어만 있어도 괜찮습니다. 필요한 기능과 만드는 방법부터 함께 정리하겠습니다. 견적이나 개발 과정이 궁금하다면 편하게 연락 주세요.</p>
       <address className="contact-details" aria-label="연락처">
         <a href="tel:+821059090313">010-5909-0313</a>
         <a href="mailto:rladlsgh7777@gmail.com">rladlsgh7777@gmail.com</a>
@@ -379,7 +390,7 @@ function ContactSection() {
 }
 
 function Footer() {
-  return <footer><BrandMark /><p>Mobile, web and AI products by INHODEV.</p><span>© 2026 INHODEV</span></footer>;
+  return <footer><BrandMark /><p>앱과 웹, AI 기능을 만듭니다.</p><span>© 2026 INHODEV</span></footer>;
 }
 
 function ProjectDetail({ project, nextProject, onClose, onNext }) {
@@ -426,7 +437,7 @@ function ProjectDetail({ project, nextProject, onClose, onNext }) {
   return (
     <div ref={dialogRef} className="detail-overlay" role="dialog" aria-modal="true" aria-label={`${project.name} 상세`} tabIndex={-1}>
       <div className="detail-nav">
-        <button type="button" onClick={onClose}><ArrowLeft size={20} /> All products</button>
+        <button type="button" onClick={onClose}><ArrowLeft size={20} /> 전체 프로젝트</button>
         <BrandMark />
         <button className="detail-close" type="button" onClick={onClose} aria-label="상세 닫기"><X size={20} /></button>
       </div>
@@ -434,7 +445,7 @@ function ProjectDetail({ project, nextProject, onClose, onNext }) {
         <section className="detail-hero">
           <img src={project.icon} alt={`${project.name} 앱 아이콘`} />
           <p>{project.eyebrow}</p><h1>{project.name}</h1><h2>{project.description}</h2>
-          <div className="detail-meta"><span>{project.platform}</span><span>{project.status}</span><span>{project.year}</span></div>
+          <div className="detail-meta"><span>{project.platformLabel}</span><span>{project.status}</span><span>{project.year}</span></div>
           <dl className="detail-facts" aria-label="프로젝트 기본 정보">
             <div><dt>기간</dt><dd>{project.period}</dd></div>
             <div><dt>팀 인원</dt><dd>{project.team}</dd></div>
@@ -445,12 +456,12 @@ function ProjectDetail({ project, nextProject, onClose, onNext }) {
           {project.screenshots.map((src, index) => <figure key={src}><img src={src} alt={`${project.name} 제품 화면 ${index + 1}`} /><figcaption>{String(index + 1).padStart(2, "0")}</figcaption></figure>)}
         </section>
         <section className="detail-story">
-          <div><p className="section-kicker">어떤 제품을 만들었는지</p><h2>{project.longDescription}</h2><p className="detail-narrative">{project.story}</p></div>
-          <dl><div><dt>사용 기술 · 참고</dt><dd>{project.stack}</dd></div><div><dt>제작 환경</dt><dd>{project.platform}</dd></div><div><dt>현재 단계</dt><dd>{project.status}</dd></div></dl>
+          <div><p className="section-kicker">이 제품이 하는 일</p><h2>{project.longDescription}</h2><p className="detail-narrative">{project.story}</p></div>
+          <dl><div><dt>개발에 사용한 기술</dt><dd>{project.stack}</dd></div><div><dt>사용 환경</dt><dd>{project.platformLabel}</dd></div><div><dt>현재 단계</dt><dd>{project.status}</dd></div></dl>
         </section>
         <section className="detail-proof">
-          <div><p className="section-kicker">직접 만든 핵심 3가지</p><ul>{project.highlights.map((item) => <li key={item}><Check size={18} /> {item}</li>)}</ul></div>
-          <div className="verification-card"><span>실제로 확인한 범위</span><p>{project.verification}</p></div>
+          <div><p className="section-kicker">제가 만든 주요 기능</p><ul>{project.highlights.map((item) => <li key={item}><Check size={18} /> {item}</li>)}</ul></div>
+          <div className="verification-card"><span>현재 확인된 내용</span><p>{project.verification}</p></div>
         </section>
         <section className="next-project-section">
           <p className="section-kicker">다음 프로젝트</p>

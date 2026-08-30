@@ -15,7 +15,7 @@ export const challengeLogEntries = [
     result: "붙음",
     activity: "코덱스 스튜던트 해커톤",
     project: "MeSource",
-    projectNote: "개인 메모리 관리용 RAG\u00a0온톨로지 프로젝트.",
+    projectNote: "개인 메모를 모아 검색하고 서로 연결해 주는 AI 지식 관리 도구입니다.",
     repository: {
       name: "codex-hakathon-1/personal-rag-ontology",
       url: "https://github.com/codex-hakathon-1/personal-rag-ontology",
@@ -79,7 +79,7 @@ export const challengeLogEntries = [
     result: "떨어짐",
     activity: "모창 2라운드",
     project: "RunQuest",
-    projectNote: "이야기가 열리는 오디오 러닝 앱.",
+    projectNote: "달린 거리와 속도에 맞춰 이야기가 이어지는 오디오 러닝 앱입니다.",
     repository: {
       name: "inhodev/RunQuest",
       url: "https://github.com/inhodev/RunQuest",
@@ -91,7 +91,7 @@ export const challengeLogEntries = [
     result: "떨어짐",
     activity: "코덱스 게임 해커톤",
     project: "Tiny Airport",
-    projectNote: "착륙, 택싱, 지상조업, 이륙을 운영하는 PC 웹게임.",
+    projectNote: "공항에서 비행기를 착륙시키고 이동시킨 뒤, 출발 준비와 이륙까지 운영하는 PC 웹게임입니다.",
     repository: {
       name: "inhodev/tiny-airport",
       url: "https://github.com/inhodev/tiny-airport",
@@ -103,7 +103,7 @@ export const challengeLogEntries = [
     result: "떨어짐",
     activity: "인천대학연합아카데미",
     project: "imfine / 프로젝트 타임슬립",
-    projectNote: "과거 시장 투자 판단 게임. 실제\u00a0계좌 연결 없음.",
+    projectNote: "과거 시장 상황을 보고 투자 결정을 연습하는 게임입니다. 실제 계좌와는 연결되지 않습니다.",
     repository: {
       name: "inhodev/imfine",
       url: "https://github.com/inhodev/imfine",

@@ -171,6 +171,7 @@ button { color: inherit; }
   letter-spacing: -.065em;
   font-weight: var(--weight-emphasis);
 }
+.hero h1 span { white-space: nowrap; }
 .hero-copy { margin: 27px 0 0; color: var(--text-soft); font-size: 19px; line-height: 1.42; letter-spacing: -.03em; }
 .hero-actions { display: flex; gap: 12px; margin-top: 38px; }
 .primary-button, .secondary-button {
@@ -454,7 +455,8 @@ footer p { margin: 0; }
   .hero { min-height: 830px; padding: 100px 20px 70px; }
   .hero-icon-stack { margin-bottom: 13px; transform: scale(.88); }
   .hero-kicker { margin-top: 2px; }
-  .hero h1 { font-size: 52px; line-height: .99; }
+  .hero h1 { font-size: 40px; line-height: 1.02; letter-spacing: -.055em; }
+  .hero h1 span { white-space: nowrap; }
   .hero-copy { margin-top: 24px; font-size: 17px; }
   .desktop-break { display: none; }
   .hero-actions { margin-top: 33px; }
