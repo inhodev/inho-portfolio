@@ -3,6 +3,7 @@ import {
   ArrowDown,
   ArrowLeft,
   ArrowUpRight,
+  Apple,
   Check,
   ChevronDown,
   Grid3X3,
@@ -56,6 +57,7 @@ const projects = [
     role: "기획, 앱 개발, 추천 기능, 콘텐츠 관리 화면",
     accent: "#4f7543",
     icon: "/projects/olive/icon.png",
+    appStoreUrl: "https://apps.apple.com/kr/app/olive-%EC%B0%AC%EC%96%91/id6757365234",
     screenshots: [
       "/projects/olive/01-home.png",
       "/projects/olive/02-explore.png",
@@ -162,6 +164,7 @@ const projects = [
     role: "기획, 아이폰 앱, 기록과 회고 기능, 출시 준비",
     accent: "#ff666c",
     icon: "/projects/rewind/icon.png",
+    appStoreUrl: "https://apps.apple.com/kr/app/rewind/id6761553250",
     screenshots: [
       "/projects/rewind/01-home.png",
       "/projects/rewind/02-language-ko.png",
@@ -267,7 +270,7 @@ function ProjectStage({ project }) {
 
 function ProjectCard({ project, onOpen }) {
   return (
-    <article className="project-card">
+    <article className={`project-card ${project.appStoreUrl ? "has-app-store" : ""}`}>
       <button className="project-card-open" type="button" onClick={() => onOpen(project)} aria-label={`${project.name} 상세 보기`}>
         <ProjectStage project={project} />
         <div className="project-card-meta">
@@ -280,6 +283,18 @@ function ProjectCard({ project, onOpen }) {
           <div className="project-tags"><span>{project.platformLabel}</span><span>{project.status}</span><span>{project.year}</span></div>
         </div>
       </button>
+      {project.appStoreUrl ? (
+        <a
+          className="app-store-link"
+          href={project.appStoreUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${project.name} App Store에서 보기`}
+          title="App Store에서 보기"
+        >
+          <Apple size={18} strokeWidth={2.2} aria-hidden="true" />
+        </a>
+      ) : null}
       <details className="project-core">
         <summary>제가 만든 주요 기능 3가지 <ChevronDown size={17} aria-hidden="true" /></summary>
         <ul>{project.highlights.map((item) => <li key={item}>{item}</li>)}</ul>

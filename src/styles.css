@@ -282,6 +282,7 @@ button { color: inherit; }
 }
 .project-grid { margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
 .project-card {
+  position: relative;
   min-width: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -311,12 +312,30 @@ button { color: inherit; }
 .project-stage.is-landscape img { width: 100%; height: 31%; border-radius: var(--radius-landscape); }
 .project-card-meta { padding: 18px 7px 23px; }
 .project-title-row { display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 11px; }
+.project-card.has-app-store .project-title-row { padding-right: 37px; }
 .project-icon { width: 42px; height: 42px; object-fit: cover; border-radius: var(--radius-icon); background: var(--surface-subtle); }
 .project-title-row h3, .project-title-row p, .project-description { margin: 0; }
 .project-title-row h3 { font-size: var(--type-card-title); letter-spacing: -.04em; }
 .project-title-row p { margin-top: 3px; color: var(--text-card-meta); font-size: var(--type-caption); }
 .card-arrow { transition: transform var(--motion-micro); }
 .project-card:hover .card-arrow { transform: translate(2px, -2px); }
+.app-store-link {
+  position: absolute;
+  z-index: 2;
+  top: 437px;
+  right: 34px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface-primary);
+  color: var(--ink);
+  transition: transform var(--motion-micro), background var(--motion-micro);
+}
+.app-store-link:hover { transform: translateY(-2px); background: var(--surface-subtle); }
+.app-store-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .project-description { min-height: 46px; margin-top: 15px; color: var(--text-body-strong); font-size: var(--type-label); line-height: 1.58; letter-spacing: -.025em; }
 .project-tags { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 6px; }
 .project-tags span, .detail-meta span { padding: 6px 9px; border-radius: var(--radius-pill); background: var(--surface-subtle); color: var(--text-tag); font-size: 10px; font-weight: var(--weight-semibold); }
@@ -489,6 +508,8 @@ footer p { margin: 0; }
   .project-stage.is-landscape { padding: 42px 14px 16px; }
   .project-card-meta { padding: 15px 4px 24px; }
   .project-title-row { grid-template-columns: 38px 1fr auto; gap: 9px; }
+  .project-card.has-app-store .project-title-row { padding-right: 35px; }
+  .app-store-link { top: 365px; right: 30px; width: 30px; height: 30px; }
   .project-icon { width: 38px; height: 38px; border-radius: var(--radius-compact); }
   .project-title-row h3 { font-size: 17px; }
   .project-title-row p { display: block; font-size: 10px; }
