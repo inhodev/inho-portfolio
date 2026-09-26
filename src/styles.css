@@ -384,7 +384,18 @@ button { color: inherit; }
 .contact-details a { color: var(--ink); font-size: var(--type-body); font-weight: var(--weight-medium); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: var(--space-1); }
 .contact-details a:hover { color: var(--text-body-strong); }
 .contact-section .contact-github { min-height: 50px; padding: 0 21px; border-radius: var(--radius-pill); display: inline-flex; align-items: center; gap: var(--space-2); background: var(--ink); color: var(--surface-primary); font-weight: var(--weight-semibold); }
-footer { max-width: 1180px; margin: 0 auto; padding: 55px var(--space-7) 70px; display: grid; grid-template-columns: 1fr auto auto; gap: var(--space-7); color: var(--text-subdued); font-size: 12px; }
+.faq-section { max-width: 1180px; margin: 0 auto; padding: 0 28px 170px; }
+.faq-section > h2 { margin: 0; font-size: var(--type-section); line-height: 1.12; letter-spacing: -.02em; }
+.faq-list { margin-top: var(--space-13); display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.faq-item { padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface-quiet); }
+.faq-item summary { font-size: var(--type-body); font-weight: var(--weight-semibold); letter-spacing: -.02em; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; float: right; color: var(--text-tertiary); font-weight: var(--weight-medium); }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { margin: 12px 0 0; color: var(--text-body); font-size: var(--type-label); line-height: 1.6; word-break: keep-all; }
+footer { max-width: 1180px; margin: 0 auto; padding: 55px var(--space-7) 70px; display: grid; grid-template-columns: 1fr auto auto auto; gap: var(--space-7); align-items: center; color: var(--text-subdued); font-size: 12px; }
+footer a { display: inline-flex; align-items: center; gap: 4px; color: var(--text-subdued); }
+footer a:hover { color: var(--ink); }
 footer .brand-mark { color: var(--ink); }
 footer p { margin: 0; }
 
@@ -553,6 +564,8 @@ footer p { margin: 0; }
   .next-project-card strong { font-size: 19px; }
   .next-project-card small { font-size: 11px; }
   .next-project-card > svg { width: 19px; }
+  .faq-section { padding: 0 20px 90px; }
+  .faq-list { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

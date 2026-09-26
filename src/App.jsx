@@ -41,6 +41,33 @@ const projects = [
     verification: "앱 화면은 자동으로 캡처했고, 거리와 이야기 진행을 계산하는 기능은 테스트했습니다. 온라인 저장 기능은 아직 연결하지 않았습니다.",
   },
   {
+    id: "seatforecast",
+    name: "SeatForecast",
+    eyebrow: "야구 직관 자리를 골라주는 앱",
+    description: "야구장 좌석마다 햇빛과 시야를 분석해 나에게 맞는 자리를 추천하는 앱입니다.",
+    longDescription: "구장과 경기 시간을 고르면 좌석별 햇빛 타임라인과 시야를 비교해 보여줍니다. 데이트·가족·응원 등 목적에 맞는 자리도 추천합니다.",
+    platform: "Mobile",
+    platformLabel: "아이폰·안드로이드 앱",
+    stack: "SwiftUI · Kotlin Compose · Supabase",
+    status: "TestFlight 테스트 중",
+    year: "2026",
+    period: "2026 · iOS 먼저 만들고 안드로이드로 옮김",
+    team: "1명",
+    role: "기획, iOS·안드로이드 앱, 3D 구장 화면, 좌석 추천과 후기 기능, 서버 연결",
+    accent: "#1a7f4f",
+    icon: "/projects/seatforecast/icon.png",
+    screenshots: [
+      "/projects/seatforecast/01-seats.jpg",
+      "/projects/seatforecast/02-custom.jpg",
+      "/projects/seatforecast/03-sunlight.jpg",
+      "/projects/seatforecast/04-verdict.jpg",
+      "/projects/seatforecast/05-my.jpg",
+    ],
+    highlights: ["좌석마다 시간대별 햇빛 이동을 타임라인으로 표시", "관람 목적에 맞는 좌석을 순위로 추천", "같은 앱을 iOS와 안드로이드 두 환경으로 제작"],
+    story: "직관 갈 때 어떤 자리가 덜 덥고 잘 보이는지 매번 고민했던 경험에서 시작했습니다. 좌석별로 시간대별 햇빛과 그늘을 계산해 보여주고, 데이트·가족·응원 같은 목적별로 자리를 추천합니다. iOS로 먼저 만들고 같은 기능을 안드로이드로 옮겼고, 후기와 좌석 데이터는 Supabase 서버에 저장합니다.",
+    verification: "iOS 시뮬레이터에서 각 탭과 핵심 화면을 캡처해 확인했고, TestFlight 빌드까지 올렸습니다. 안드로이드 앱은 실기기에서 실행을 확인했습니다.",
+  },
+  {
     id: "olive",
     name: "OLIVE",
     eyebrow: "내 상황에 맞는 찬양을 찾는 앱",
@@ -49,24 +76,24 @@ const projects = [
     platform: "Mobile",
     platformLabel: "모바일 앱",
     stack: "Flutter · Supabase · Riverpod · OpenAI",
-    status: "시험 버전",
+    status: "앱스토어 출시",
     year: "2026",
-    period: "2026 · 시험 버전 제작",
+    period: "2026 · 앱스토어 출시",
     team: "1명",
     role: "기획, 앱 개발, 추천 기능, 콘텐츠 관리 화면",
     accent: "#4f7543",
     icon: "/projects/olive/icon.png",
     appStoreUrl: "https://apps.apple.com/kr/app/olive-%EC%B0%AC%EC%96%91/id6757365234",
     screenshots: [
-      "/projects/olive/01-home.png",
-      "/projects/olive/02-explore.png",
-      "/projects/olive/03-mix.png",
-      "/projects/olive/04-ai-answer.png",
-      "/projects/olive/05-profile.png",
+      "/projects/olive/01-home.jpg",
+      "/projects/olive/02-recommend.jpg",
+      "/projects/olive/03-chart.jpg",
+      "/projects/olive/04-community.jpg",
+      "/projects/olive/05-schedule.jpg",
     ],
     highlights: ["기분과 상황을 입력해 찬양 추천받기", "추천 곡을 듣고 내 보관함에 저장", "사용자 앱과 콘텐츠 관리 화면을 함께 제작"],
-    story: "노래 제목을 몰라도 지금 필요한 찬양을 찾을 수 있게 만들었습니다. 기분이나 상황을 적으면 곡을 추천받고, 들은 곡은 저장하거나 기록으로 남길 수 있습니다. 다른 사용자와 이야기를 나누는 공간과 콘텐츠를 관리하는 화면도 함께 만들었습니다.",
-    verification: "현재 보이는 앱 화면과 Flutter 자동 테스트를 확인했습니다. 일부 화면은 이전 버전에서 촬영했습니다.",
+    story: "노래 제목을 몰라도 지금 필요한 찬양을 찾을 수 있게 만들었습니다. 기분이나 상황을 적으면 곡을 추천받고, 들은 곡은 저장하거나 기록으로 남길 수 있습니다. 다른 사용자와 이야기를 나누는 공간과 콘텐츠를 관리하는 화면도 함께 만들어 지금은 앱스토어에 올라가 있습니다.",
+    verification: "앱스토어에 실제로 출시된 버전이며, 보이는 화면은 최신 UI로 다시 캡처했습니다.",
   },
   {
     id: "inha-ai",
@@ -75,15 +102,16 @@ const projects = [
     description: "학사·장학·시설 질문에 학교 공식 출처를 붙여 답하는 웹 서비스입니다.",
     longDescription: "학생이 질문하면 학교 공식 자료에서 답을 찾습니다. 참고한 출처와 자료의 최신 여부도 함께 보여줍니다.",
     platform: "Web",
-    platformLabel: "웹 서비스",
+    platformLabel: "웹 서비스 · 아이폰 앱",
     stack: "React · Bun · PostgreSQL · pgvector",
-    status: "테스트용 시제품",
+    status: "앱 출시 · 웹 시제품",
     year: "2026",
-    period: "2026 · 시제품 제작",
+    period: "2026 · 시제품 제작, 앱스토어 출시",
     team: "1명",
     role: "기획, 웹 개발, 자료 검색, 답변 확인 기능",
     accent: "#4a59ff",
     icon: "/projects/inha-ai/icon.png",
+    appStoreUrl: "https://apps.apple.com/kr/app/%EC%9D%B8%ED%95%98%ED%94%BD/id6760780069",
     screenshots: [
       "/projects/inha-ai/01-home-desktop.png",
       "/projects/inha-ai/03-answer-desktop.png",
@@ -92,7 +120,35 @@ const projects = [
     ],
     highlights: ["학교 공지와 안내 자료에서 먼저 답 찾기", "답변 아래에 자료 출처와 최신 여부 표시", "학생용 질문 화면과 자료 관리 화면을 함께 제작"],
     story: "학교 생활 정보는 틀린 답 하나가 큰 불편으로 이어질 수 있습니다. 그래서 학교 공식 자료를 찾았을 때만 답하고, 어떤 자료를 참고했는지 답변 아래에 표시했습니다. 현재는 내 컴퓨터에서 질문을 입력해 출처가 붙은 답변이 나오는 과정까지 다시 확인했습니다.",
-    verification: "내 컴퓨터에서 준비된 예시 자료를 사용해 질문부터 출처가 붙은 답변까지 다시 실행했습니다. 실제 학교 서버와 연결한 상태는 아닙니다.",
+    verification: "웹 서비스는 내 컴퓨터에서 준비된 예시 자료로 질문부터 출처가 붙은 답변까지 다시 실행했습니다. 앱 버전은 '인하픽'이라는 이름으로 앱스토어에 출시되어 있으며, 디자인은 계속 다듬는 중입니다.",
+  },
+  {
+    id: "runtrip",
+    name: "RunTrip Pass",
+    eyebrow: "대회 코스를 평소에도 달리는 러닝 앱",
+    description: "마라톤 대회 코스를 평소에도 나눠 달리고, 코스 주변 여행까지 계획하는 앱입니다.",
+    longDescription: "실제 대회 코스 위에 지도와 체크포인트를 얹어 평소에도 대회처럼 달릴 수 있게 합니다. 코스 주변 볼거리와 여행 일정도 함께 잡습니다.",
+    platform: "Mobile",
+    platformLabel: "아이폰 앱 · 지도 서비스",
+    stack: "Flutter · 지도 SDK · Cloudflare Workers",
+    status: "출시됨",
+    year: "2026",
+    period: "2026 · 출시",
+    team: "1명",
+    role: "기획, 앱 개발, 코스 데이터 정리, 지도와 일정 기능, 서버 API",
+    accent: "#00a170",
+    icon: "/projects/runtrip/icon.png",
+    appStoreUrl: "https://apps.apple.com/kr/app/%EB%9F%B0%ED%8A%B8%EB%A6%BD%ED%8C%A8%EC%8A%A4/id6790648620",
+    githubUrl: "https://github.com/inhodev/runtrippass",
+    screenshots: [
+      "/projects/runtrip/01-map.jpg",
+      "/projects/runtrip/02-places.jpg",
+      "/projects/runtrip/03-progress.jpg",
+      "/projects/runtrip/04-summary.jpg",
+    ],
+    highlights: ["실제 대회 코스를 지도 위에 표시하고 구간 기록 제공", "코스 주변 볼거리·맛집을 모아 여행 일정으로 연결", "대회·코스 데이터를 서버 API로 제공"],
+    story: "대회 코스는 대회 당일에만 열리는 경우가 많아 평소에도 나눠 달릴 수 있게 만들었습니다. 대회 공식 코스를 지도에 옮기고 구간 기록과 체크포인트를 제공하며, 달리고 난 뒤 주변 여행까지 이어지도록 했습니다. 앱과 데이터를 제공하는 Cloudflare Workers 서버를 함께 만들어 출시했습니다.",
+    verification: "실제 출시된 상태이며, 대회 코스 화면과 주변 장소·진행 기록 화면을 확인했습니다.",
   },
   {
     id: "cosmoday",
@@ -103,22 +159,24 @@ const projects = [
     platform: "iOS",
     platformLabel: "아이폰 앱",
     stack: "SwiftUI · SwiftData · WidgetKit",
-    status: "시험 버전",
+    status: "앱스토어 출시",
     year: "2026",
-    period: "2026 · 시험 버전 제작",
+    period: "2026 · 앱스토어 출시",
     team: "1명",
     role: "콘텐츠 기획, 아이폰 앱, 위젯, 1년치 콘텐츠 제작",
     accent: "#162fff",
     icon: "/projects/cosmoday/icon.png",
+    appStoreUrl: "https://apps.apple.com/kr/app/cosmoday-%EC%98%A4%EB%8A%98%EC%9D%98-%EC%9A%B0%EC%A3%BC/id6793820347",
     screenshots: [
-      "/projects/cosmoday/01-january.png",
-      "/projects/cosmoday/02-supernova-poster.jpg",
-      "/projects/cosmoday/03-cinematic.jpg",
-      "/projects/cosmoday/04-june.jpg",
+      "/projects/cosmoday/01-today.jpg",
+      "/projects/cosmoday/02-story.jpg",
+      "/projects/cosmoday/03-interactive-3d.jpg",
+      "/projects/cosmoday/04-sky.jpg",
+      "/projects/cosmoday/05-time-machine.jpg",
     ],
     highlights: ["날짜마다 하나씩 보여주는 짧은 우주 이야기", "앱·위젯·알림·공유 이미지에 같은 내용 제공", "1년치 우주 이야기를 만들고 확인하는 과정"],
     story: "어렵게 느껴지는 우주 이야기를 하루에 하나씩 가볍게 볼 수 있게 만들었습니다. 오늘의 카드 내용을 앱과 위젯, 알림, 공유 이미지에서도 볼 수 있게 했습니다. 1년치 이야기를 꾸준히 만들고 틀린 내용을 고칠 수 있도록 제작 과정도 정리했습니다.",
-    verification: "현재 화면에는 검토를 마친 콘텐츠 카드와 영상용 이미지를 사용했습니다. 이번 자동 화면 테스트는 앱 실행에 필요한 서명 문제로 끝까지 진행하지 못했습니다.",
+    verification: "앱스토어에 출시된 상태이며, 보이는 화면은 스토어 심사용으로 다시 만든 화면입니다.",
   },
   {
     id: "toy",
@@ -148,6 +206,32 @@ const projects = [
     verification: "앱에서 쓰는 화면 코드를 맥에서 실행해 자동으로 캡처했습니다.",
   },
   {
+    id: "demolition",
+    name: "Demolition Desk",
+    eyebrow: "건물을 부수는 물리 퍼즐 게임",
+    description: "기둥을 고르고 자르면 실제 물리 계산으로 건물이 무너지는 아이폰 게임입니다.",
+    longDescription: "목표 파괴율을 넘기면 다음 레벨이 열립니다. 가위·무게추·폭탄 도구로 구조물을 분석해 무너뜨립니다.",
+    platform: "iOS",
+    platformLabel: "아이폰 앱(출시 준비)",
+    stack: "Three.js · Rapier 물리엔진 · Capacitor",
+    status: "출시 준비 중",
+    year: "2026",
+    period: "2026 · 제작과 자동 점검",
+    team: "1명",
+    role: "기획, 물리 엔진 연결, 레벨 24개 제작, 아이폰 포팅",
+    accent: "#5c6672",
+    icon: "/projects/demolition/icon.png",
+    screenshots: [
+      "/projects/demolition/01-home.jpg",
+      "/projects/demolition/02-levels.jpg",
+      "/projects/demolition/03-collapse.jpg",
+      "/projects/demolition/04-rubble.jpg",
+    ],
+    highlights: ["부재를 자르면 실제 물리엔진으로 무너지는 구조물", "레벨 24개와 오늘의 챌린지", "웹 기술로 만들어 아이폰 앱으로 포팅"],
+    story: "단순히 버튼을 누르면 무너지는 게임이 아니라, 어느 부재를 자르느냐에 따라 무너지는 방식이 달라지는 퍼즐을 만들었습니다. 부재 사이의 연결과 무게를 실제로 계산하는 물리엔진을 쓰고, 조인트가 부서지는 조건과 지면 연결성 검사를 직접 설계했습니다. 웹 기술로 만들어 Capacitor로 아이폰 앱으로 옮겼고, 스토어 출시는 준비 중입니다.",
+    verification: "실제로 플레이하며 레벨과 붕괴 장면을 캡처했고, 물리 안정성은 자동 점검 스크립트로 확인했습니다. 아직 스토어에 출시하지 않았습니다.",
+  },
+  {
     id: "rewind",
     name: "Rewind",
     eyebrow: "매일 기록하고 돌아보는 회고 앱",
@@ -156,9 +240,9 @@ const projects = [
     platform: "iOS",
     platformLabel: "아이폰 앱",
     stack: "SwiftUI · SwiftData · StoreKit · CloudKit",
-    status: "출시 준비",
+    status: "앱스토어 출시",
     year: "2026",
-    period: "2026 · 출시 준비",
+    period: "2026 · 앱스토어 출시",
     team: "1명",
     role: "기획, 아이폰 앱, 기록과 회고 기능, 출시 준비",
     accent: "#ff666c",
@@ -207,8 +291,8 @@ const catalogTaxonomy = [
 ];
 
 const evidencePoints = [
-  { value: "6개", label: "직접 만든 제품", description: "앱·웹·AI 제품 6개를 실제 화면과 함께 볼 수 있습니다." },
-  { value: "20장", label: "TOY 화면 점검", description: "한국어·영어 화면 20장을 같은 조건으로 자동 확인했습니다." },
+  { value: "9개", label: "직접 만든 제품", description: "앱·웹·AI 제품 9개를 실제 화면과 함께 볼 수 있습니다." },
+  { value: "5개", label: "앱스토어 출시작", description: "OLIVE·Rewind·인하픽·런트립패스·Cosmoday가 앱스토어에, SeatForecast는 TestFlight에 올라가 있습니다." },
   { value: "출처 확인", label: "INHA AI 답변 점검", description: "질문을 입력하고 공식 출처가 붙은 답변이 나오는 과정까지 다시 실행했습니다." },
 ];
 
@@ -220,6 +304,14 @@ function AppleMark() {
   return (
     <svg width="16" height="22" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" focusable="false">
       <path d="M319.1 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7-55.8.9-115.1 44.5-115.1 133.2 0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9ZM262.5 104.5c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3Z" />
+    </svg>
+  );
+}
+
+function GithubMark({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
     </svg>
   );
 }
@@ -267,7 +359,7 @@ function Hero({ onBrowse }) {
 }
 
 function ProjectStage({ project }) {
-  const stageClass = project.platform === "Web" || project.id === "cosmoday" ? "is-landscape" : "is-mobile";
+  const stageClass = project.platform === "Web" || project.id === "cosmoday" || project.id === "demolition" ? "is-landscape" : "is-mobile";
   return (
     <div className={`project-stage ${stageClass}`} style={{ "--accent": project.accent }}>
       {project.screenshots.slice(0, 3).map((src, index) => <img key={src} src={src} alt={`${project.name} 화면 ${index + 1}`} loading="lazy" />)}
@@ -300,6 +392,18 @@ function ProjectCard({ project, onOpen }) {
           title="App Store에서 보기"
         >
           <AppleMark />
+        </a>
+      ) : null}
+      {project.githubUrl ? (
+        <a
+          className="app-store-link github-link"
+          href={project.githubUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${project.name} GitHub에서 보기`}
+          title="GitHub에서 코드 보기"
+        >
+          <GithubMark size={17} />
         </a>
       ) : null}
       <details className="project-core">
@@ -397,6 +501,30 @@ function EvidenceSection() {
   );
 }
 
+const faqItems = [
+  { q: "개발을 잘 몰라도 괜찮나요?", a: "네, 괜찮습니다. 어떤 화면과 기능이 필요한지부터 같이 정리해서, 어려운 말 없이 진행합니다." },
+  { q: "어떤 걸 만들 수 있나요?", a: "아이폰·안드로이드 앱, 웹 서비스, AI 기능을 연결한 제품까지 만듭니다. 위 프로젝트들이 전부 그렇게 만든 결과물입니다." },
+  { q: "디자인도 해주시나요?", a: "직접 합니다. 여기 보이는 화면과 아이콘도 전부 직접 디자인했습니다." },
+  { q: "만든 뒤 관리는 어떻게 되나요?", a: "배포까지 마치고, 나중에 다른 사람이 이어받아도 되도록 코드와 문서를 정리해 전달합니다." },
+];
+
+function FaqSection() {
+  return (
+    <section className="faq-section" id="faq">
+      <p className="section-kicker">자주 묻는 질문</p>
+      <h2>의뢰 전에 궁금한 것들</h2>
+      <div className="faq-list">
+        {faqItems.map((item) => (
+          <details key={item.q} className="faq-item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function ContactSection() {
   return (
     <section className="contact-section" id="contact">
@@ -405,6 +533,7 @@ function ContactSection() {
       <address className="contact-details" aria-label="연락처">
         <a href="tel:+821059090313">010-5909-0313</a>
         <a href="mailto:rladlsgh7777@gmail.com">rladlsgh7777@gmail.com</a>
+        <a href="https://open.kakao.com/o/sbpKRY9e" target="_blank" rel="noreferrer">카카오톡 오픈채팅</a>
       </address>
       <a className="contact-github" href="https://github.com/inhodev" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={20} /></a>
     </section>
@@ -412,7 +541,14 @@ function ContactSection() {
 }
 
 function Footer() {
-  return <footer><BrandMark /><p>앱과 웹, AI 기능을 만듭니다.</p><span>© 2026 INHODEV</span></footer>;
+  return (
+    <footer>
+      <BrandMark />
+      <p>앱과 웹, AI 기능을 만듭니다.</p>
+      <a href="/challenge-log">공모전·지원 도전 기록 <ArrowUpRight size={14} /></a>
+      <span>© 2026 INHODEV</span>
+    </footer>
+  );
 }
 
 function ProjectDetail({ project, nextProject, onClose, onNext }) {
@@ -474,7 +610,7 @@ function ProjectDetail({ project, nextProject, onClose, onNext }) {
             <div><dt>내 역할</dt><dd>{project.role}</dd></div>
           </dl>
         </section>
-        <section className={`detail-screens ${project.platform === "Web" || project.id === "cosmoday" ? "has-landscape" : ""}`}>
+        <section className={`detail-screens ${project.platform === "Web" || project.id === "cosmoday" || project.id === "demolition" ? "has-landscape" : ""}`}>
           {project.screenshots.map((src, index) => <figure key={src}><img src={src} alt={`${project.name} 제품 화면 ${index + 1}`} /><figcaption>{String(index + 1).padStart(2, "0")}</figcaption></figure>)}
         </section>
         <section className="detail-story">
@@ -508,7 +644,7 @@ function PortfolioApp() {
   return (
     <>
       <Header onBrowse={browse} />
-      <main><Hero onBrowse={browse} /><Catalog onOpen={setSelectedProject} /><About /><EvidenceSection /><ContactSection /></main>
+      <main><Hero onBrowse={browse} /><Catalog onOpen={setSelectedProject} /><About /><EvidenceSection /><FaqSection /><ContactSection /></main>
       <Footer />
       {selectedProject ? <ProjectDetail project={selectedProject} nextProject={nextProject} onClose={closeProject} onNext={() => setSelectedProject(nextProject)} /> : null}
     </>

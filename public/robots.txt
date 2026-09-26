@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://inho-portfolio.pages.dev/sitemap.xml
