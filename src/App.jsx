@@ -167,6 +167,10 @@ const projects = [
     accent: "#162fff",
     icon: "/projects/cosmoday/icon.png",
     appStoreUrl: "https://apps.apple.com/kr/app/cosmoday-%EC%98%A4%EB%8A%98%EC%9D%98-%EC%9A%B0%EC%A3%BC/id6793820347",
+    deckShots: [
+      "/projects/cosmoday/01-today.jpg",
+      "/projects/cosmoday/03-interactive-3d.jpg",
+    ],
     screenshots: [
       "/projects/cosmoday/01-today.jpg",
       "/projects/cosmoday/02-story.jpg",
@@ -221,6 +225,10 @@ const projects = [
     role: "기획, 물리 엔진 연결, 레벨 24개 제작, 아이폰 포팅",
     accent: "#5c6672",
     icon: "/projects/demolition/icon.png",
+    deckShots: [
+      "/projects/demolition/01-home.jpg",
+      "/projects/demolition/03-collapse.jpg",
+    ],
     screenshots: [
       "/projects/demolition/01-home.jpg",
       "/projects/demolition/02-levels.jpg",
@@ -359,7 +367,7 @@ function Hero({ onBrowse }) {
 }
 
 function ProjectStage({ project }) {
-  const stageClass = project.platform === "Web" || project.id === "cosmoday" || project.id === "demolition" ? "is-landscape" : "is-mobile";
+  const stageClass = project.platform === "Web" ? "is-landscape" : "is-mobile";
   return (
     <div className={`project-stage ${stageClass}`} style={{ "--accent": project.accent }}>
       {project.screenshots.slice(0, 3).map((src, index) => <img key={src} src={src} alt={`${project.name} 화면 ${index + 1}`} loading="lazy" />)}
@@ -610,7 +618,7 @@ function ProjectDetail({ project, nextProject, onClose, onNext }) {
             <div><dt>내 역할</dt><dd>{project.role}</dd></div>
           </dl>
         </section>
-        <section className={`detail-screens ${project.platform === "Web" || project.id === "cosmoday" || project.id === "demolition" ? "has-landscape" : ""}`}>
+        <section className={`detail-screens ${project.platform === "Web" ? "has-landscape" : ""}`}>
           {project.screenshots.map((src, index) => <figure key={src}><img src={src} alt={`${project.name} 제품 화면 ${index + 1}`} /><figcaption>{String(index + 1).padStart(2, "0")}</figcaption></figure>)}
         </section>
         <section className="detail-story">
@@ -665,7 +673,7 @@ function DeckSlide({ children, index, total, className = "" }) {
 }
 
 function isLandscapeProject(project) {
-  return project.platform === "Web" || project.id === "cosmoday" || project.id === "demolition";
+  return project.platform === "Web";
 }
 
 function DeckPage() {
@@ -722,7 +730,7 @@ function DeckPage() {
               </dl>
             </div>
             <div className={`deck-shots ${isLandscapeProject(project) ? "is-landscape" : ""}`}>
-              {(isLandscapeProject(project) ? project.screenshots.slice(0, 2) : project.screenshots.slice(0, 2)).map((src, idx) => (
+              {(project.deckShots || project.screenshots.slice(0, 2)).map((src, idx) => (
                 <img key={src} src={src} alt={`${project.name} 화면 ${idx + 1}`} />
               ))}
             </div>
