@@ -572,3 +572,66 @@ footer p { margin: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* ---------- /deck 인쇄용 슬라이드 (16:9, PPT 가로) ---------- */
+@page { size: 1280px 720px; margin: 0; }
+
+.deck-root { width: 1280px; margin: 0 auto; background: #fff; }
+.deck-slide {
+  position: relative; width: 1280px; height: 720px; overflow: hidden;
+  padding: 44px 60px 40px; display: flex; flex-direction: column;
+  break-after: page; page-break-after: always; background: #fff;
+  font-family: "Inter", "IBM Plex Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+}
+.deck-slide-head { display: flex; align-items: center; justify-content: space-between; color: #111; }
+.deck-slide-head .brand-mark { font-size: 13px; font-weight: 700; letter-spacing: .12em; }
+.deck-slide-head > span { font-size: 12px; color: #8a8f98; font-variant-numeric: tabular-nums; }
+.deck-slide-foot { position: absolute; left: 60px; right: 60px; bottom: 22px; font-size: 10.5px; color: #b6bac2; }
+.deck-kicker { font-size: 13px; font-weight: 600; color: #6b7280; letter-spacing: .04em; margin: 0; }
+
+/* 표지 */
+.deck-cover { justify-content: space-between; }
+.deck-cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.deck-cover h1 { margin: 18px 0 26px; font-size: 66px; line-height: 1.14; letter-spacing: -.02em; font-weight: 700; }
+.deck-cover-sub { margin: 0; font-size: 17.5px; line-height: 1.7; color: #4b5563; }
+.deck-cover-meta { display: flex; gap: 28px; font-size: 13.5px; color: #6b7280; border-top: 1px solid #e8eaee; padding-top: 20px; }
+
+/* 전체 개요 */
+.deck-overview-head h2 { margin: 14px 0 30px; font-size: 40px; letter-spacing: -.02em; font-weight: 700; }
+.deck-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 24px; }
+.deck-grid-item { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 1px solid #eceef1; border-radius: 18px; background: #fafbfc; }
+.deck-grid-item img { width: 56px; height: 56px; border-radius: 14px; object-fit: cover; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.deck-grid-item strong { display: block; font-size: 16px; letter-spacing: -.01em; }
+.deck-grid-item span { display: block; font-size: 12px; color: #6b7280; margin-top: 3px; }
+.deck-grid-item em { display: inline-block; font-style: normal; font-size: 11px; font-weight: 600; color: var(--accent, #555); margin-top: 5px; padding: 2px 9px; border-radius: 99px; background: color-mix(in srgb, var(--accent, #555) 10%, #fff); }
+
+/* 프로젝트 슬라이드 */
+.deck-project-body { flex: 1; display: flex; align-items: center; gap: 56px; min-height: 0; }
+.deck-project-info { width: 470px; flex-shrink: 0; }
+.deck-project-info h2 { margin: 12px 0 14px; font-size: 50px; letter-spacing: -.02em; font-weight: 700; line-height: 1.1; }
+.deck-status { display: inline-block; margin: 0 0 20px; font-size: 12.5px; font-weight: 600; color: var(--accent); background: color-mix(in srgb, var(--accent) 9%, #fff); padding: 5px 13px; border-radius: 99px; }
+.deck-desc { margin: 0 0 22px; font-size: 16px; line-height: 1.65; color: #374151; }
+.deck-project-info ul { list-style: none; margin: 0 0 26px; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.deck-project-info li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: #1f2937; line-height: 1.5; }
+.deck-project-info li svg { flex-shrink: 0; margin-top: 3px; color: var(--accent); }
+.deck-facts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 0; padding-top: 18px; border-top: 1px solid #e8eaee; }
+.deck-facts dt { font-size: 10.5px; color: #9ca3af; letter-spacing: .05em; margin-bottom: 4px; }
+.deck-facts dd { margin: 0; font-size: 12px; font-weight: 600; color: #111; line-height: 1.45; }
+
+/* 스크린샷 */
+.deck-shots { flex: 1; display: flex; align-items: center; justify-content: center; gap: 26px; min-width: 0; }
+.deck-shots img { height: 520px; width: auto; border-radius: 30px; border: 1px solid #e5e7eb; box-shadow: 0 14px 40px rgba(15, 23, 42, .12); object-fit: cover; }
+.deck-shots.is-landscape { flex-direction: column; gap: 22px; }
+.deck-shots.is-landscape img { height: auto; width: 560px; max-height: 268px; object-fit: cover; border-radius: 20px; }
+.deck-shots.is-landscape img:only-child { max-height: 460px; width: auto; max-width: 620px; }
+
+/* 마지막 문의 */
+.deck-contact { justify-content: space-between; }
+.deck-contact-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.deck-contact h2 { margin: 16px 0 24px; font-size: 54px; line-height: 1.16; letter-spacing: -.02em; font-weight: 700; }
+.deck-contact-list { display: flex; gap: 30px; flex-wrap: wrap; border-top: 1px solid #e8eaee; padding-top: 22px; font-size: 14.5px; font-weight: 600; color: #111; }
+
+@media print {
+  .deck-root { margin: 0; }
+  html, body { width: 1280px; }
+}

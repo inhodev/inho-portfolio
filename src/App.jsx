@@ -651,7 +651,104 @@ function PortfolioApp() {
   );
 }
 
+function DeckSlide({ children, index, total, className = "" }) {
+  return (
+    <section className={`deck-slide ${className}`}>
+      <div className="deck-slide-head">
+        <BrandMark />
+        <span>{String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
+      </div>
+      {children}
+      <div className="deck-slide-foot"><span>inho-portfolio.pages.dev</span></div>
+    </section>
+  );
+}
+
+function isLandscapeProject(project) {
+  return project.platform === "Web" || project.id === "cosmoday" || project.id === "demolition";
+}
+
+function DeckPage() {
+  const total = projects.length + 3;
+  return (
+    <div className="deck-root">
+      <DeckSlide index={0} total={total} className="deck-cover">
+        <div className="deck-cover-body">
+          <p className="deck-kicker">앱 · 웹 개발 포트폴리오</p>
+          <h1>아이디어를 앱과 웹으로<br />만듭니다.</h1>
+          <p className="deck-cover-sub">기획 · 개발 · 테스트 · 배포까지 한 사람이 이어서 맡습니다.<br />앱스토어 출시작 5개, 직접 만든 제품 9개.</p>
+        </div>
+        <div className="deck-cover-meta">
+          <span>김인호 · INHODEV</span>
+          <span>010-5909-0313 · rladlsgh7777@gmail.com</span>
+          <span>2026</span>
+        </div>
+      </DeckSlide>
+
+      <DeckSlide index={1} total={total} className="deck-overview">
+        <div className="deck-overview-head">
+          <p className="deck-kicker">전체 작업</p>
+          <h2>만든 제품 9개</h2>
+        </div>
+        <div className="deck-grid">
+          {projects.map((project) => (
+            <div className="deck-grid-item" key={project.id}>
+              <img src={project.icon} alt="" />
+              <div>
+                <strong>{project.name}</strong>
+                <span>{project.platformLabel}</span>
+                <em style={{ "--accent": project.accent }}>{project.status}</em>
+              </div>
+            </div>
+          ))}
+        </div>
+      </DeckSlide>
+
+      {projects.map((project, i) => (
+        <DeckSlide key={project.id} index={i + 2} total={total} className="deck-project">
+          <div className="deck-project-body">
+            <div className="deck-project-info">
+              <p className="deck-kicker">{project.eyebrow}</p>
+              <h2>{project.name}</h2>
+              <p className="deck-status" style={{ "--accent": project.accent }}>{project.status}</p>
+              <p className="deck-desc">{project.longDescription}</p>
+              <ul>
+                {project.highlights.map((item) => <li key={item}><Check size={15} strokeWidth={2.5} />{item}</li>)}
+              </ul>
+              <dl className="deck-facts">
+                <div><dt>기간</dt><dd>{project.period}</dd></div>
+                <div><dt>인원</dt><dd>{project.team}</dd></div>
+                <div><dt>기술</dt><dd>{project.stack}</dd></div>
+              </dl>
+            </div>
+            <div className={`deck-shots ${isLandscapeProject(project) ? "is-landscape" : ""}`}>
+              {(isLandscapeProject(project) ? project.screenshots.slice(0, 2) : project.screenshots.slice(0, 2)).map((src, idx) => (
+                <img key={src} src={src} alt={`${project.name} 화면 ${idx + 1}`} />
+              ))}
+            </div>
+          </div>
+        </DeckSlide>
+      ))}
+
+      <DeckSlide index={total - 1} total={total} className="deck-contact">
+        <div className="deck-contact-body">
+          <p className="deck-kicker">문의</p>
+          <h2>만들고 싶은 앱이나<br />웹이 있나요?</h2>
+          <p className="deck-cover-sub">아이디어 단계부터 이야기할 수 있습니다.<br />기획, 개발, 테스트, 배포까지 이어서 맡습니다.</p>
+        </div>
+        <div className="deck-contact-list">
+          <span>010-5909-0313</span>
+          <span>rladlsgh7777@gmail.com</span>
+          <span>카카오톡 오픈채팅 — 김인호</span>
+          <span>github.com/inhodev</span>
+        </div>
+      </DeckSlide>
+    </div>
+  );
+}
+
 export function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  if (path === "/deck") return <DeckPage />;
   return path === "/challenge-log" ? <ChallengeLogPage /> : <PortfolioApp />;
 }
