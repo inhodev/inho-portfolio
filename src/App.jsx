@@ -101,8 +101,8 @@ const projects = [
     eyebrow: "학교 공식 자료로 답하는 캠퍼스 AI",
     description: "학사·장학·시설 질문에 학교 공식 출처를 붙여 답하는 웹 서비스입니다.",
     longDescription: "학생이 질문하면 학교 공식 자료에서 답을 찾습니다. 참고한 출처와 자료의 최신 여부도 함께 보여줍니다.",
-    platform: "Web",
-    platformLabel: "웹 서비스 · 아이폰 앱",
+    platform: "Mobile",
+    platformLabel: "아이폰 앱 · 웹 서비스",
     stack: "React · Bun · PostgreSQL · pgvector",
     status: "앱 출시 · 웹 시제품",
     year: "2026",
@@ -112,11 +112,16 @@ const projects = [
     accent: "#4a59ff",
     icon: "/projects/inha-ai/icon.png",
     appStoreUrl: "https://apps.apple.com/kr/app/%EC%9D%B8%ED%95%98%ED%94%BD/id6760780069",
+    deckShots: [
+      "/projects/inha-ai/app-01.jpg",
+      "/projects/inha-ai/app-04.jpg",
+    ],
     screenshots: [
-      "/projects/inha-ai/01-home-desktop.png",
-      "/projects/inha-ai/03-answer-desktop.png",
-      "/projects/inha-ai/02-home-mobile.png",
-      "/projects/inha-ai/04-answer-mobile.png",
+      "/projects/inha-ai/app-01.jpg",
+      "/projects/inha-ai/app-02.jpg",
+      "/projects/inha-ai/app-03.jpg",
+      "/projects/inha-ai/app-04.jpg",
+      "/projects/inha-ai/app-05.jpg",
     ],
     highlights: ["학교 공지와 안내 자료에서 먼저 답 찾기", "답변 아래에 자료 출처와 최신 여부 표시", "학생용 질문 화면과 자료 관리 화면을 함께 제작"],
     story: "학교 생활 정보는 틀린 답 하나가 큰 불편으로 이어질 수 있습니다. 그래서 학교 공식 자료를 찾았을 때만 답하고, 어떤 자료를 참고했는지 답변 아래에 표시했습니다. 현재는 내 컴퓨터에서 질문을 입력해 출처가 붙은 답변이 나오는 과정까지 다시 확인했습니다.",
@@ -676,6 +681,12 @@ function isLandscapeProject(project) {
   return project.platform === "Web";
 }
 
+function statusTone(status) {
+  if (status.includes("TestFlight")) return "#0969da";
+  if (status.includes("출시") && !status.includes("준비")) return "#1a7f37";
+  return "#57606a";
+}
+
 function DeckPage() {
   const total = projects.length + 3;
   return (
@@ -705,7 +716,7 @@ function DeckPage() {
               <div>
                 <strong>{project.name}</strong>
                 <span>{project.platformLabel}</span>
-                <em style={{ "--accent": project.accent }}>{project.status}</em>
+                <em style={{ "--accent": statusTone(project.status) }}>{project.status}</em>
               </div>
             </div>
           ))}
@@ -718,7 +729,7 @@ function DeckPage() {
             <div className="deck-project-info">
               <p className="deck-kicker">{project.eyebrow}</p>
               <h2>{project.name}</h2>
-              <p className="deck-status" style={{ "--accent": project.accent }}>{project.status}</p>
+              <p className="deck-status" style={{ "--accent": statusTone(project.status) }}>{project.status}</p>
               <p className="deck-desc">{project.longDescription}</p>
               <ul>
                 {project.highlights.map((item) => <li key={item}><Check size={15} strokeWidth={2.5} />{item}</li>)}
